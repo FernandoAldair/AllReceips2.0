@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:icon="@android:drawable/ic_menu_directions"
+        android:title="Inicio" />
+
+    <item
+        android:id="@+id/search"
+        android:icon="@android:drawable/ic_menu_directions"
+        android:title="Buscador" />
+
+    <item
+        android:id="@+id/Notification"
+        android:icon="@android:drawable/ic_menu_directions"
+        android:title="Notificaciones" />
+
+    <item
+        android:id="@+id/Mylist"
+        android:icon="@android:drawable/ic_menu_directions"
+        android:title="Mi lista" />
+</menu>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tittle_login"
+        android:textSize="24dp"
+        android:layout_gravity="top|center"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logotrabajo"
+        android:layout_gravity="top|center"/>
+
+    <EditText
+        android:id="@+id/Email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:hint="@string/tittle_email"
+        android:inputType="textPersonName"
+        android:background="@drawable/rounded_border"
+        android:padding="10dp"/>
+
+    <EditText
+        android:id="@+id/Password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp"
+        android:hint="@string/tittle_pasword"
+        android:inputType="textPassword"
+        android:background="@drawable/rounded_border"
+        android:padding="10dp"/>
+
+    <Button
+        android:id="@+id/buttonIniciar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="@string/button_login"
+        android:background="@drawable/button_rounded"/>
+
+    <Button
+        android:id="@+id/buttonRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="@string/button_register"
+        android:background="@drawable/button_rounded_border"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <ImageButton
+            android:id="@+id/buttonGoogle"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/button_social"
+            android:scaleType="centerInside"
+            android:src="@drawable/google"/>
+
+        <ImageButton
+            android:id="@+id/buttonFacebook"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/facebook"
+            android:background="@drawable/button_social"/>
+
+        <ImageButton
+            android:id="@+id/buttonTwitter"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="56dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/Twitter"
+            android:background="@drawable/button_social"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonInvitado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/button_rounded"
+        android:text="@string/button_invited"
+        android:layout_gravity="end"/>
+
+</LinearLayout>
