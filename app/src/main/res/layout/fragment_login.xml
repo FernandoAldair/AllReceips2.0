@@ -13,8 +13,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:src="@drawable/logotrabajo"
         android:layout_gravity="top|center"/>
 
@@ -75,30 +75,30 @@
 
         <ImageButton
             android:id="@+id/buttonGoogle"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginStart="56dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="32dp"
             android:background="@drawable/button_social"
             android:scaleType="centerInside"
             android:src="@drawable/google"/>
 
         <ImageButton
             android:id="@+id/buttonFacebook"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:scaleType="centerInside"
             android:src="@drawable/facebook"
             android:background="@drawable/button_social"/>
 
         <ImageButton
             android:id="@+id/buttonTwitter"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="8dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
             android:layout_marginEnd="56dp"
             android:scaleType="centerInside"
-            android:src="@drawable/Twitter"
+            android:src="@drawable/twitter"
             android:background="@drawable/button_social"/>
 
     </LinearLayout>
