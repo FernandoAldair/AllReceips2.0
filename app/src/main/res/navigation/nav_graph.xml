@@ -45,7 +45,7 @@
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/insertarRecetaFragment"
-        android:name="com.example.allreceips20.InsertarRecetaFragment"
+        android:name="com.example.allreceips20.ListaBaseDeDatos.InsertarRecetaFragment"
         android:label="fragment_insertar_receta"
         tools:layout="@layout/fragment_insertar_receta" />
     <fragment

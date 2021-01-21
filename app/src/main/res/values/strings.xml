@@ -12,13 +12,14 @@
 
     <!--Crear Receta-->
     <string name="tittle_Insertar">Crear receta</string>
+    <string name="title_nombre_receta">Nombre de la receta</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_home">Inicio</string>
     <string name="title_search">Buscar</string>
     <string name="title_notifi">Notifications</string>
     <string name="title_mylist">Mi lista</string>
-    <string name="title_nombre_receta">Nombre de la receta</string>
+
     <string name="title_tiempo">time</string>
     <string name="title_descripcion">Preparacion de la receta</string>
     <string name="title_buscar">Buscar ingredientes</string>
