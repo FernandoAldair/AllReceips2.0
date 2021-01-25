@@ -37,6 +37,12 @@
         <action
             android:id="@+id/action_loginFragment_to_miListaFragment"
             app:destination="@id/miListaFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_notifyFragment"
+            app:destination="@id/notifyFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -53,6 +59,16 @@
         android:name="com.example.allreceips20.MiListaFragment"
         android:label="fragment_mi_lista"
         tools:layout="@layout/fragment_mi_lista" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.allreceips20.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/notifyFragment"
+        android:name="com.example.allreceips20.NotifyFragment"
+        android:label="fragment_notify"
+        tools:layout="@layout/fragment_notify" />
 
 
 </navigation>

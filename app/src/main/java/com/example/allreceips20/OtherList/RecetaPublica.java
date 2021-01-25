@@ -1,10 +1,10 @@
-package com.example.allreceips20.ListaBaseDeDatos;
+package com.example.allreceips20.OtherList;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class Receta{
+public class RecetaPublica{
     @PrimaryKey(autoGenerate = true)
     public int id;
 
@@ -12,11 +12,10 @@ public class Receta{
     public String descripcion;
     public String portada;
     public int tiempo;
+    float valoracion;
 
-    public Receta(String titulo, String descripcion, String portada, int tiempo) {
+    public RecetaPublica(String titulo, String descripcion) {
         this.titulo = titulo;
         this.descripcion = descripcion;
-        this.portada = portada;
-        this.tiempo = tiempo;
     }
 }
