@@ -38,9 +38,6 @@
             android:id="@+id/action_loginFragment_to_miListaFragment"
             app:destination="@id/miListaFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
-        <action
             android:id="@+id/action_loginFragment_to_notifyFragment"
             app:destination="@id/notifyFragment" />
     </fragment>
@@ -48,7 +45,11 @@
         android:id="@+id/homeFragment"
         android:name="com.example.allreceips20.homeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
     <fragment
         android:id="@+id/insertarRecetaFragment"
         android:name="com.example.allreceips20.ListaBaseDeDatos.InsertarRecetaFragment"
@@ -69,6 +70,11 @@
         android:name="com.example.allreceips20.NotifyFragment"
         android:label="fragment_notify"
         tools:layout="@layout/fragment_notify" />
+    <fragment
+        android:id="@+id/recetaViewFragment"
+        android:name="com.example.allreceips20.RecetaViewFragment"
+        android:label="fragment_receta_view"
+        tools:layout="@layout/fragment_receta_view" />
 
 
 </navigation>

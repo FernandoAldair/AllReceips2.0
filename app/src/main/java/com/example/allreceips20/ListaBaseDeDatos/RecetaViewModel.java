@@ -25,8 +25,8 @@ public class RecetaViewModel  extends AndroidViewModel {
     public LiveData<List<Receta>> obtenerReceta() {
         return recetaRepositorio.obtenerReceta();
     }
-    void insertarReceta(String titulo, String descripcion, String portada) {
-        recetaRepositorio.insertarReceta(titulo, descripcion, portada);
+    void insertarReceta(String titulo, String descripcion, String portada, int tiempo) {
+        recetaRepositorio.insertarReceta(titulo, descripcion, portada, tiempo);
     }
     void establecerImagenSeleccionada(Uri uri){
         imagenSeleccionada.setValue(uri);

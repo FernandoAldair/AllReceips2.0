@@ -63,7 +63,11 @@ public class MiListaFragment extends Fragment {
             holder.binding.titulo.setText(receta.titulo);
             holder.binding.descripcion.setText(receta.descripcion);
 
-            Glide.with(holder.itemView).load(receta.portada).into(holder.binding.portada);
+
+
+            Glide.with(holder.itemView)
+                    .load(receta.portada)
+                    .into(holder.binding.portada);
         }
 
         @Override
