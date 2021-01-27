@@ -6,8 +6,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -61,13 +59,9 @@ public class MiListaFragment extends Fragment {
         public void onBindViewHolder(@NonNull RecetaViewHolder holder, int position) {
             Receta receta = recetaList.get(position);
             holder.binding.titulo.setText(receta.titulo);
-            holder.binding.descripcion.setText(receta.descripcion);
+//            holder.binding.descripcion.setText(receta.descripcion);
 
-
-
-            Glide.with(holder.itemView)
-                    .load(receta.portada)
-                    .into(holder.binding.portada);
+            Glide.with(holder.itemView).load(receta.portada).into(holder.binding.portada);
         }
 
         @Override
@@ -89,5 +83,4 @@ public class MiListaFragment extends Fragment {
             this.binding = binding;
         }
     }
-
 }

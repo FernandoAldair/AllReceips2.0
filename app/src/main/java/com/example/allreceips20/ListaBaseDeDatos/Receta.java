@@ -11,12 +11,12 @@ public class Receta{
     public String titulo;
     public String descripcion;
     public String portada;
-    public int tiempo;
 
-    public Receta(String titulo, String descripcion, String portada, int tiempo) {
+
+    public Receta(String titulo, String descripcion, String portada) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.portada = portada;
-        this.tiempo = tiempo;
+
     }
 }

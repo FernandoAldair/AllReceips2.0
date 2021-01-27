@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".SearchFragment"
     android:orientation="vertical">
 
@@ -13,21 +14,182 @@
         android:iconifiedByDefault="false"/>
 
     <ScrollView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:id="@+id/recetas"
-            android:layout_width="wrap_content"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listaReceta2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-        </LinearLayout>
-
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="1"/>
     </ScrollView>
+
+
+
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/fondo2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical">-->
+
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:background="@color/white">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textSize="20sp"-->
+<!--                android:padding="8dp"-->
+<!--                android:text="Recientes"-->
+<!--                android:layout_weight="1"/>-->
+
+<!--            <ImageButton-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/ic_menu_list"-->
+<!--                android:layout_weight="0"/>-->
+
+<!--        </LinearLayout>-->
+
+<!--        <ScrollView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical"-->
+<!--                android:background="#DCDCDC"-->
+<!--                android:padding="20dp">-->
+
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:background="@drawable/rounded_border"-->
+<!--                    android:backgroundTint="@color/white"-->
+<!--                    android:layout_marginBottom="20dp">-->
+
+<!--                    <TextView-->
+<!--                        android:text="Titulo"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:textSize="20sp"-->
+<!--                        android:padding="8dp"/>-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="200dp"-->
+<!--                        android:adjustViewBounds="true"-->
+<!--                        android:layout_gravity="center"/>-->
+
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:background="@drawable/rounded_border"-->
+<!--                    android:backgroundTint="@color/white"-->
+<!--                    android:layout_marginBottom="20dp">-->
+
+<!--                    <TextView-->
+<!--                        android:text="Titulo"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:textSize="20sp"-->
+<!--                        android:padding="8dp"/>-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="200dp"-->
+<!--                        android:adjustViewBounds="true"-->
+<!--                        android:layout_gravity="center"/>-->
+
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:background="@drawable/rounded_border"-->
+<!--                    android:backgroundTint="@color/white"-->
+<!--                    android:layout_marginBottom="20dp">-->
+
+<!--                    <TextView-->
+<!--                        android:text="Titulo"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:textSize="20sp"-->
+<!--                        android:padding="8dp"/>-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="200dp"-->
+<!--                        android:adjustViewBounds="true"-->
+<!--                        android:layout_gravity="center"/>-->
+
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:background="@drawable/rounded_border"-->
+<!--                    android:backgroundTint="@color/white"-->
+<!--                    android:layout_marginBottom="20dp">-->
+
+<!--                    <TextView-->
+<!--                        android:text="Titulo"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:textSize="20sp"-->
+<!--                        android:padding="8dp"/>-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="200dp"-->
+<!--                        android:adjustViewBounds="true"-->
+<!--                        android:layout_gravity="center"/>-->
+
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:background="@drawable/rounded_border"-->
+<!--                    android:backgroundTint="@color/white"-->
+<!--                    android:layout_marginBottom="20dp">-->
+
+<!--                    <TextView-->
+<!--                        android:text="Titulo"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:textSize="20sp"-->
+<!--                        android:padding="8dp"/>-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="200dp"-->
+<!--                        android:adjustViewBounds="true"-->
+<!--                        android:layout_gravity="center"/>-->
+
+<!--                </LinearLayout>-->
+
+<!--            </LinearLayout>-->
+
+
+<!--        </ScrollView>-->
+
+<!--    </LinearLayout>-->
+
+
 
 </LinearLayout>

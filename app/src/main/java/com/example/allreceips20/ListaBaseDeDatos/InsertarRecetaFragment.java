@@ -22,7 +22,6 @@ import com.bumptech.glide.Glide;
 import com.example.allreceips20.databinding.FragmentInsertarRecetaBinding;
 
 public class InsertarRecetaFragment extends Fragment {
-
     private FragmentInsertarRecetaBinding binding;
     private Uri imagenSeleccionada;
     private RecetaViewModel recetaViewModel;

@@ -6,16 +6,14 @@ import androidx.room.PrimaryKey;
 @Entity
 public class RecetaPublica{
     @PrimaryKey(autoGenerate = true)
-    public int id;
-
-    public String titulo;
-    public String descripcion;
-    public String portada;
-    public int tiempo;
+    int id;
+    String nombre;
+    String descripcion;
     float valoracion;
 
-    public RecetaPublica(String titulo, String descripcion) {
-        this.titulo = titulo;
+
+    public RecetaPublica(String nombre, String descripcion) {
+        this.nombre = nombre;
         this.descripcion = descripcion;
     }
 }

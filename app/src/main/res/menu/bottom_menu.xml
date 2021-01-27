@@ -6,17 +6,12 @@
         android:title="Inicio" />
 
     <item
-        android:id="@+id/searchFragment"
-        android:icon="@drawable/ic_menu_search"
-        android:title="Buscador" />
+        android:id="@+id/miListaFragment"
+        android:icon="@drawable/ic_menu_list"
+        android:title="Mi lista" />
 
     <item
         android:id="@+id/notifyFragment"
         android:icon="@drawable/ic_menu_notify"
         android:title="Notificaciones" />
-
-    <item
-        android:id="@+id/miListaFragment"
-        android:icon="@drawable/ic_menu_list"
-        android:title="Mi lista" />
 </menu>

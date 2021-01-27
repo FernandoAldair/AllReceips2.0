@@ -20,9 +20,9 @@ public class RecetaRepositorio {
         return recetaDao.obtenerReceta();
     }
 
-    void insertarReceta(String titulo, String descripcion, String portada, int tiempo) {
+    void insertarReceta(String titulo, String descripcion, String portada) {
         executor.execute(() -> {
-            recetaDao.insertarReceta(new Receta(titulo, descripcion, portada, tiempo));
+            recetaDao.insertarReceta(new Receta(titulo, descripcion, portada));
         });
     }
 }

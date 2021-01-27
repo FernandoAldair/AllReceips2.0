@@ -14,6 +14,7 @@ import androidx.room.RoomDatabase;
 import java.util.List;
 
 
+
 @Database(entities = {Receta.class}, version = 1, exportSchema = false)
 public abstract class BaseDeDatos extends RoomDatabase {
     private static volatile BaseDeDatos db;
