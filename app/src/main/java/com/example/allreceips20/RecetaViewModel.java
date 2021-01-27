@@ -1,4 +1,4 @@
-package com.example.allreceips20.ListaBaseDeDatos;
+package com.example.allreceips20;
 
 import android.app.Application;
 import android.net.Uri;
@@ -8,10 +8,15 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.example.allreceips20.model.Receta;
+import com.example.allreceips20.model.RecetaRepositorio;
+
 import java.util.List;
 
 public class RecetaViewModel  extends AndroidViewModel {
-    MutableLiveData<Uri> imagenSeleccionada = new MutableLiveData<>();
+
+    public MutableLiveData<Uri> imagenSeleccionada = new MutableLiveData<>();
+    MutableLiveData<Receta> recetaSeleccionado = new MutableLiveData<>();
 
     RecetaRepositorio recetaRepositorio;
 
@@ -24,11 +29,26 @@ public class RecetaViewModel  extends AndroidViewModel {
     public LiveData<List<Receta>> obtenerReceta() {
         return recetaRepositorio.obtenerReceta();
     }
-    void insertarReceta(String titulo, String descripcion, String portada) {
+
+    public LiveData<List<Receta>> obtenerRecetasIniciales() {
+        return recetaRepositorio.obtenerRecetasIniciales();
+    }
+
+    public void insertarReceta(String titulo, String descripcion, String portada) {
         recetaRepositorio.insertarReceta(titulo, descripcion, portada);
     }
-    void establecerImagenSeleccionada(Uri uri){
+
+    public void establecerImagenSeleccionada(Uri uri){
         imagenSeleccionada.setValue(uri);
+    }
+
+
+    void seleccionar(Receta receta){
+        recetaSeleccionado.setValue(receta);
+    }
+
+    MutableLiveData<Receta> seleccionado(){
+        return recetaSeleccionado;
     }
 
 }

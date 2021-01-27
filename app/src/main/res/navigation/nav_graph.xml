@@ -49,17 +49,24 @@
         <action
             android:id="@+id/action_homeFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_recetaViewFragment"
+            app:destination="@id/recetaViewFragment" />
     </fragment>
     <fragment
         android:id="@+id/insertarRecetaFragment"
-        android:name="com.example.allreceips20.ListaBaseDeDatos.InsertarRecetaFragment"
+        android:name="com.example.allreceips20.InsertarRecetaFragment"
         android:label="fragment_insertar_receta"
         tools:layout="@layout/fragment_insertar_receta" />
     <fragment
         android:id="@+id/miListaFragment"
         android:name="com.example.allreceips20.MiListaFragment"
         android:label="fragment_mi_lista"
-        tools:layout="@layout/fragment_mi_lista" />
+        tools:layout="@layout/fragment_mi_lista" >
+        <action
+            android:id="@+id/action_miListaFragment_to_recetaViewFragment"
+            app:destination="@id/recetaViewFragment" />
+    </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.example.allreceips20.SearchFragment"

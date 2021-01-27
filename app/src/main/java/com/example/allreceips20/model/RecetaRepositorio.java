@@ -1,4 +1,4 @@
-package com.example.allreceips20.ListaBaseDeDatos;
+package com.example.allreceips20.model;
 
 import android.app.Application;
 
@@ -16,11 +16,15 @@ public class RecetaRepositorio {
         recetaDao = BaseDeDatos.getInstance(application).obetenerRecetaDao();
     }
 
-    LiveData<List<Receta>> obtenerReceta() {
-        return recetaDao.obtenerReceta();
+    public LiveData<List<Receta>> obtenerReceta() {
+        return recetaDao.obtenerRecetas();
     }
 
-    void insertarReceta(String titulo, String descripcion, String portada) {
+    public LiveData<List<Receta>> obtenerRecetasIniciales() {
+        return recetaDao.obtenerRecetasIniciales();
+    }
+
+    public void insertarReceta(String titulo, String descripcion, String portada) {
         executor.execute(() -> {
             recetaDao.insertarReceta(new Receta(titulo, descripcion, portada));
         });
