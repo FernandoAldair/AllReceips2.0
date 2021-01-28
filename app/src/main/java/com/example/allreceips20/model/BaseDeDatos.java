@@ -57,9 +57,9 @@ public abstract class BaseDeDatos extends RoomDatabase {
 
     private static void insertarDatosIniciales(RecetaDao dao) {
         executor.execute(() -> {
-            dao.insertarReceta(new Receta("dsasda", "dasads","file:///android_asset/1.png",1));
-//            dao.insertarReceta(new Receta("dsaaasdasda", "dasads","file:///android_asset/1.jpg",1));
-//            dao.insertarReceta(new Receta("dsdasasdasdasda", "dasads","file:///android_asset/1.jpg",1));
+            dao.insertarReceta(new Receta("dsasda", "dasads","file:///android_asset/1.jpg",1));
+            dao.insertarReceta(new Receta("dsaaasdasda", "dasads","file:///android_asset/2.jpg",1));
+            dao.insertarReceta(new Receta("dsdasasdasdasda", "dasads","file:///android_asset/10.jpg",1));
 //            dao.insertarReceta(new Receta());
 //            dao.insertarReceta(new Receta());
         });

@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -19,10 +21,11 @@ import com.example.allreceips20.model.Receta;
 import java.util.List;
 
 
-public class homeFragment extends Fragment {
+public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
     private RecetaViewModel recetaViewModel;
+    private NavController navController;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -32,6 +35,7 @@ public class homeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        navController = Navigation.findNavController(view);
 
         recetaViewModel = new ViewModelProvider(requireActivity()).get(RecetaViewModel.class);
 
@@ -41,10 +45,12 @@ public class homeFragment extends Fragment {
         recetaViewModel.obtenerRecetasIniciales().observe(getViewLifecycleOwner(),  receta ->{
             recetaAdapter.setRecetaList2(receta);
         });
+//
+        binding.filtrar.setOnClickListener(v -> navController.navigate(R.id.action_homeFragment_to_filtroFragment));
     }
 
     class RecetaAdapter2 extends RecyclerView.Adapter<RecetaViewHolder2>{
-        List<Receta> recetaList2;
+        List<Receta> recetaList;
 
         @NonNull
         @Override
@@ -53,20 +59,26 @@ public class homeFragment extends Fragment {
         }
         @Override
         public void onBindViewHolder(@NonNull RecetaViewHolder2 holder, int position) {
-            Receta receta = recetaList2.get(position);
+            Receta receta = recetaList.get(position);
             holder.binding.titulo.setText(receta.titulo);
 //            holder.binding.descripcion.setText(receta.descripcion);
 
             Glide.with(holder.itemView).load(receta.portada).into(holder.binding.portada);
+
+            // CUANDO DAS CLICL EN LA RECETA
+            holder.itemView.setOnClickListener(v -> {
+                recetaViewModel.seleccionar(receta);
+                navController.navigate(R.id.action_homeFragment_to_recetaViewFragment);
+            });
         }
 
         @Override
         public int getItemCount() {
-            return recetaList2 == null ? 0 : recetaList2.size();
+            return recetaList == null ? 0 : recetaList.size();
         }
 
         void setRecetaList2(List<Receta> recetaList){
-            this.recetaList2 = recetaList;
+            this.recetaList = recetaList;
             notifyDataSetChanged();
         }
     }
@@ -81,30 +93,3 @@ public class homeFragment extends Fragment {
     }
 
 }
-
-
-    //    @Override
-//    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-//        super.onViewCreated(view, savedInstanceState);
-//
-//        ElementosViewModel elementosViewModel = new ViewModelProvider(requireActivity()).get(ElementosViewModel.class);
-//
-//        elementosViewModel.seleccionado().observe(getViewLifecycleOwner(), new Observer<RecetaPublica>() {
-//            @Override
-//            public void onChanged(RecetaPublica elemento) {
-//                binding.nombre.setText(elemento.nombre);
-//                binding.descripcion.setText(elemento.descripcion);
-//                binding.valoracion.setRating(elemento.valoracion);
-//
-//                binding.valoracion.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-//                    @Override
-//                    public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-//                        if(fromUser){
-//                            elementosViewModel.actualizar(elemento, rating);
-//                        }
-//                    }
-//                });
-//            }
-//        });
-//    }
-//}

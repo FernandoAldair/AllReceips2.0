@@ -65,13 +65,10 @@ public class MiListaFragment extends Fragment {
 
             Glide.with(holder.itemView).load(receta.portada).into(holder.binding.portada);
 
-// CUANDO DAS CLICL EN LA RECETA
-            holder.itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    recetaViewModel.seleccionar(receta);
-                    navController.navigate(R.id.action_miListaFragment_to_recetaViewFragment);
-                }
+            // CUANDO DAS CLICL EN LA RECETA
+            holder.itemView.setOnClickListener(v -> {
+                recetaViewModel.seleccionar(receta);
+                navController.navigate(R.id.action_miListaFragment_to_recetaViewFragment);
             });
 
         }

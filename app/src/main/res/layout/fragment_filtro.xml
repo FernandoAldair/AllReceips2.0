@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -14,13 +13,16 @@
         <me.originqiu.library.EditTag
             android:id="@+id/edit_tag_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            app:input_layout="@layout/view_sample_input_tag"
+            app:tag_layout="@layout/view_sample_tag" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:layout_marginTop="4dp"
-            android:background="@color/colorAccent" />
+            android:background="@color/design_default_color_secondary_variant" />
     </LinearLayout>
+
 
 </LinearLayout>

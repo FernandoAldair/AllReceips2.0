@@ -1,18 +1,16 @@
 package com.example.allreceips20;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.Observer;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
@@ -37,24 +35,16 @@ public class SplashFragment extends Fragment {
         MutableLiveData<Boolean> finishedLoading = new MutableLiveData<>();
 
 
-        finishedLoading.observe(getViewLifecycleOwner(), new Observer<Boolean>() {
-            @Override
-            public void onChanged(Boolean aBoolean) {
-                navController.navigate(R.id.action_splashFragment_to_loginFragment);
-            }
-        });
+        finishedLoading.observe(getViewLifecycleOwner(), aBoolean -> navController.navigate(R.id.action_splashFragment_to_loginFragment));
 
         // esto deberia estar en el Model y llamarlo a traves del ViewModel
-        executor.execute(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    // simular la carga de recursos
-                    Thread.sleep(2000);
-                    finishedLoading.postValue(true);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        executor.execute(() -> {
+            try {
+                // simular la carga de recursos
+                Thread.sleep(2000);
+                finishedLoading.postValue(true);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         });
 

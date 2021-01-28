@@ -19,11 +19,13 @@
             android:layout_weight="1"/>
 
         <ImageButton
+            android:id="@+id/filtrar"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:src="@drawable/ic_menu_filter"
             android:backgroundTint="@color/white"
-            android:layout_weight="0"/>
+            android:layout_weight="0"
+            android:clickable="true"/>
 
 
     </LinearLayout>

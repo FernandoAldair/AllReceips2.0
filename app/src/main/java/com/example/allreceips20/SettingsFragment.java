@@ -1,21 +1,17 @@
 package com.example.allreceips20;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.widget.SwitchCompat;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
 
-import com.example.allreceips20.databinding.FragmentHomeBinding;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import com.example.allreceips20.databinding.FragmentSettingBinding;
 
-public class settingFragment extends Fragment {
+public class SettingsFragment extends Fragment {
 
 
     private FragmentSettingBinding binding;
@@ -30,11 +26,8 @@ public class settingFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-        binding.switchTema.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        binding.switchTema.setOnCheckedChangeListener((buttonView, isChecked) -> {
 
-            }
         });
 
     }

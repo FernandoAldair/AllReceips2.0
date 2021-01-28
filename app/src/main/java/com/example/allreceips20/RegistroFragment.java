@@ -1,18 +1,15 @@
 package com.example.allreceips20;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.example.allreceips20.databinding.FragmentRegistroBinding;
 
@@ -34,18 +31,8 @@ public class RegistroFragment extends Fragment {
         navController = Navigation.findNavController(view);
 
 //      BOTON REGISTRARSE
-        binding.buttonRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                if (){
-//
-//                }
-//                else {
-                    navController.navigate(R.id.action_registroFragment_to_loginFragment);
-//                }
-
-            }
+        binding.buttonRegister.setOnClickListener(v -> {
+                navController.navigate(R.id.action_registroFragment_to_loginFragment);
         });
-
     }
 }

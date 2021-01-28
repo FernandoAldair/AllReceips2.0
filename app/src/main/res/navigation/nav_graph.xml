@@ -46,7 +46,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.allreceips20.homeFragment"
+        android:name="com.example.allreceips20.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -55,6 +55,9 @@
         <action
             android:id="@+id/action_homeFragment_to_recetaViewFragment"
             app:destination="@id/recetaViewFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_filtroFragment"
+            app:destination="@id/filtroFragment" />
     </fragment>
     <fragment
         android:id="@+id/insertarRecetaFragment"
@@ -87,10 +90,10 @@
         tools:layout="@layout/fragment_receta_view" />
     <fragment
         android:id="@+id/settingFragment"
-        android:name="com.example.allreceips20.settingFragment"
+        android:name="com.example.allreceips20.SettingsFragment"
         android:label="fragment_setting"
         tools:layout="@layout/fragment_setting" />
-    <fragment
+    <dialog
         android:id="@+id/filtroFragment"
         android:name="com.example.allreceips20.FiltroFragment"
         android:label="fragment_filtro"
