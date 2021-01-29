@@ -1,6 +1,8 @@
 package com.example.allreceips20;
 
+import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +13,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -24,6 +27,7 @@ import java.util.List;
 
 import me.originqiu.library.EditTag;
 
+@RequiresApi(api = Build.VERSION_CODES.KITKAT)
 public class InsertarRecetaFragment extends Fragment {
     private FragmentInsertarRecetaBinding binding;
     private Uri imagenSeleccionada;
@@ -60,7 +64,7 @@ public class InsertarRecetaFragment extends Fragment {
         });
 
         binding.portada.setOnClickListener(v ->{
-            lanzadorGaleria.launch("image/*");
+            lanzadorGaleria.launch(new String[]{"image/*"});
         });
 
         recetaViewModel.imagenSeleccionada.observe(getViewLifecycleOwner(), uri -> {
@@ -91,7 +95,9 @@ public class InsertarRecetaFragment extends Fragment {
 
         binding.editTagView.addTag("Receta");
     }
-    private final ActivityResultLauncher<String> lanzadorGaleria = registerForActivityResult(new ActivityResultContracts.GetContent(), uri -> {
+
+    private final ActivityResultLauncher<String[]> lanzadorGaleria = registerForActivityResult(new ActivityResultContracts.OpenDocument(), uri -> {
+        requireContext().getContentResolver().takePersistableUriPermission(uri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
         recetaViewModel.establecerImagenSeleccionada(uri);
     });
 

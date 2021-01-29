@@ -1,15 +1,12 @@
 package com.example.allreceips20;
 
-import androidx.annotation.NonNull;
+import android.os.Bundle;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
-
-import android.app.Activity;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 
 import com.example.allreceips20.databinding.ActivityMainBinding;
 
@@ -29,9 +26,13 @@ public class MainActivity extends AppCompatActivity {
 
             if (destination.getId() == R.id.splashFragment || destination.getId() == R.id.loginFragment || destination.getId() == R.id.registroFragment || destination.getId() == R.id.insertarRecetaFragment) {
                 binding.bottomNavigation.setVisibility(View.GONE);
-                binding.buttonAdd.setVisibility(View.GONE);
             } else {
                 binding.bottomNavigation.setVisibility(View.VISIBLE);
+            }
+
+            if (destination.getId() == R.id.recetaViewFragment || destination.getId() == R.id.notifyFragment || destination.getId() == R.id.settingFragment || destination.getId() == R.id.splashFragment || destination.getId() == R.id.loginFragment || destination.getId() == R.id.registroFragment || destination.getId() == R.id.insertarRecetaFragment){
+                binding.buttonAdd.setVisibility(View.GONE);
+            }else {
                 binding.buttonAdd.setVisibility(View.VISIBLE);
             }
 

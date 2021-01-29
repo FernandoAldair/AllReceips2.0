@@ -58,6 +58,9 @@
         <action
             android:id="@+id/action_homeFragment_to_filtroFragment"
             app:destination="@id/filtroFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_socialButtonsFragment"
+            app:destination="@id/socialButtonsFragment" />
     </fragment>
     <fragment
         android:id="@+id/insertarRecetaFragment"
@@ -98,6 +101,11 @@
         android:name="com.example.allreceips20.FiltroFragment"
         android:label="fragment_filtro"
         tools:layout="@layout/fragment_filtro" />
+    <fragment
+        android:id="@+id/socialButtonsFragment"
+        android:name="com.example.allreceips20.SocialButtonsFragment"
+        android:label="fragment_social_buttons"
+        tools:layout="@layout/fragment_social_buttons" />
 
 
 </navigation>

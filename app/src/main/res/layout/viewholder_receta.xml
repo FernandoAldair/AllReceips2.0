@@ -30,6 +30,30 @@
             android:backgroundTint="@color/white"
             android:layout_margin="8dp" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_favorite_border"
+                android:layout_gravity="end"
+                android:layout_marginRight="16dp"
+                android:background="@color/white"/>
+
+            <ImageButton
+                android:id="@+id/button_social"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_sharev2"
+                android:layout_gravity="end"
+                android:background="@color/white"/>
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

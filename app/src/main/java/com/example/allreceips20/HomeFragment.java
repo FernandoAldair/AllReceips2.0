@@ -49,6 +49,7 @@ public class HomeFragment extends Fragment {
         binding.filtrar.setOnClickListener(v -> navController.navigate(R.id.action_homeFragment_to_filtroFragment));
     }
 
+
     class RecetaAdapter2 extends RecyclerView.Adapter<RecetaViewHolder2>{
         List<Receta> recetaList;
 
@@ -65,12 +66,15 @@ public class HomeFragment extends Fragment {
 
             Glide.with(holder.itemView).load(receta.portada).into(holder.binding.portada);
 
+            holder.binding.buttonSocial.setOnClickListener(v ->{
+                navController.navigate(R.id.action_homeFragment_to_socialButtonsFragment);
+            });
+
             // CUANDO DAS CLICL EN LA RECETA
             holder.itemView.setOnClickListener(v -> {
                 recetaViewModel.seleccionar(receta);
                 navController.navigate(R.id.action_homeFragment_to_recetaViewFragment);
             });
-
 
 
         }
