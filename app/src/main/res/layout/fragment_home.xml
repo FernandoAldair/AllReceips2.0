@@ -30,16 +30,21 @@
 
     </LinearLayout>
 
-
-    <ScrollView
+    <com.yalantis.pulltomakesoup.PullToRefreshView
+        android:id="@+id/pull_to_refresh"
+        app:type="soup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/listaReceta2"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="1"/>
-    </ScrollView>
+            android:layout_height="wrap_content">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listaReceta2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="1"/>
+        </ScrollView>
+    </com.yalantis.pulltomakesoup.PullToRefreshView>
 
 </LinearLayout>

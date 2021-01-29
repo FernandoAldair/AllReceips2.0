@@ -30,21 +30,8 @@
             android:background="@drawable/rounded_border"
             android:padding="10dp"
             android:backgroundTint="@color/white"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="20dp"/>
 
-        <EditText
-            android:id="@+id/tiempo"
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="numberDecimal"
-            android:background="@drawable/rounded_border"
-            android:backgroundTint="@color/white"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="16dp"
-            android:hint="tiempo(min)"
-            android:padding="5dp"/>
     </LinearLayout>
 
     <ScrollView

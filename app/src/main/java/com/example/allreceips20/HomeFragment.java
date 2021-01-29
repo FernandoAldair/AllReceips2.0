@@ -11,17 +11,23 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.allreceips20.databinding.FragmentHomeBinding;
 import com.example.allreceips20.databinding.ViewholderRecetaBinding;
 import com.example.allreceips20.model.Receta;
+import com.yalantis.pulltomakesoup.PullToRefreshView;
 
 import java.util.List;
 
 
 public class HomeFragment extends Fragment {
+
+    private PullToRefreshView mPullToRefreshView;
+    private static final int REFRESH_DELAY = 4000;
+
 
     private FragmentHomeBinding binding;
     private RecetaViewModel recetaViewModel;
@@ -47,6 +53,20 @@ public class HomeFragment extends Fragment {
         });
 //
         binding.filtrar.setOnClickListener(v -> navController.navigate(R.id.action_homeFragment_to_filtroFragment));
+
+        mPullToRefreshView = (PullToRefreshView) binding.pullToRefresh;
+        mPullToRefreshView.setOnRefreshListener(new PullToRefreshView.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                mPullToRefreshView.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mPullToRefreshView.setRefreshing(false);
+                    }
+                }, REFRESH_DELAY);
+            }
+        });
+
     }
 
 
