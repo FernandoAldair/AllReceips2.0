@@ -32,6 +32,8 @@ public class LoginFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         navController = Navigation.findNavController(view);
 
+
+
 //        BOTON REGISTRO
         binding.buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override

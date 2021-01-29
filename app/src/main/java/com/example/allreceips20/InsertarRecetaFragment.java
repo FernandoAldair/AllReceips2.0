@@ -19,11 +19,17 @@ import androidx.navigation.Navigation;
 import com.bumptech.glide.Glide;
 import com.example.allreceips20.databinding.FragmentInsertarRecetaBinding;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import me.originqiu.library.EditTag;
+
 public class InsertarRecetaFragment extends Fragment {
     private FragmentInsertarRecetaBinding binding;
     private Uri imagenSeleccionada;
     private RecetaViewModel recetaViewModel;
     private NavController navController;
+    private List<String> tagStrings = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -63,6 +69,27 @@ public class InsertarRecetaFragment extends Fragment {
                 Glide.with(requireView()).load(uri).into(binding.portada);
             }
         });
+
+        //Set tag add callback before set tag list
+        binding.editTagView.setTagAddCallBack(new EditTag.TagAddCallback() {
+            @Override
+            public boolean onTagAdd(String tagValue) {
+                if ("test1".equals(tagValue)) {
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        });
+        binding.editTagView.setTagDeletedCallback(new EditTag.TagDeletedCallback() {
+            @Override
+            public void onTagDelete(String deletedTagValue) {
+                Toast.makeText(requireContext(), deletedTagValue, Toast.LENGTH_SHORT).show();
+            }
+        });
+        binding.editTagView.setTagList(tagStrings);
+
+        binding.editTagView.addTag("Receta");
     }
     private final ActivityResultLauncher<String> lanzadorGaleria = registerForActivityResult(new ActivityResultContracts.GetContent(), uri -> {
         recetaViewModel.establecerImagenSeleccionada(uri);

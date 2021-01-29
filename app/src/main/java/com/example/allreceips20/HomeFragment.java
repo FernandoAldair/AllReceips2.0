@@ -70,6 +70,9 @@ public class HomeFragment extends Fragment {
                 recetaViewModel.seleccionar(receta);
                 navController.navigate(R.id.action_homeFragment_to_recetaViewFragment);
             });
+
+
+
         }
 
         @Override

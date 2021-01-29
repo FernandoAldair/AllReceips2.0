@@ -1,5 +1,6 @@
 package com.example.allreceips20;
 
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;

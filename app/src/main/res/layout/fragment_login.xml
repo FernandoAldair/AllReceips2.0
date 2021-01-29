@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <TextView
@@ -73,33 +74,29 @@
         android:gravity="center"
         android:layout_marginTop="10dp">
 
-        <ImageButton
-            android:id="@+id/buttonGoogle"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="56dp"
-            android:layout_marginEnd="32dp"
-            android:background="@drawable/button_social"
-            android:scaleType="centerInside"
-            android:src="@drawable/google"/>
+        <com.shaishavgandhi.loginbuttons.GoogleButton
+            android:layout_width="60dp"
+            android:textAlignment="center"
+            app:iconSize="30dp"
+            android:layout_height="wrap_content" />
 
-        <ImageButton
-            android:id="@+id/buttonFacebook"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/facebook"
-            android:background="@drawable/button_social"/>
+        <com.shaishavgandhi.loginbuttons.FacebookButton
+            android:layout_width="60dp"
+            app:iconSize="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"/>
 
-        <ImageButton
-            android:id="@+id/buttonTwitter"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="56dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/twitter"
-            android:background="@drawable/button_social"/>
+        <com.shaishavgandhi.loginbuttons.TwitterButton
+            android:layout_width="60dp"
+            app:iconSize="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"/>
+
+        <com.shaishavgandhi.loginbuttons.LinkedInButton
+            android:layout_width="60dp"
+            app:iconSize="30dp"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
