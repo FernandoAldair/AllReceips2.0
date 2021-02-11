@@ -73,8 +73,8 @@
         android:label="fragment_mi_lista"
         tools:layout="@layout/fragment_mi_lista" >
         <action
-            android:id="@+id/action_miListaFragment_to_recetaViewFragment"
-            app:destination="@id/recetaViewFragment" />
+            android:id="@+id/action_miListaFragment_to_miRecetaViewFragment"
+            app:destination="@id/miRecetaViewFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
@@ -101,11 +101,25 @@
         android:name="com.example.allreceips20.FiltroFragment"
         android:label="fragment_filtro"
         tools:layout="@layout/fragment_filtro" />
-    <fragment
+    <dialog
         android:id="@+id/socialButtonsFragment"
         android:name="com.example.allreceips20.SocialButtonsFragment"
         android:label="fragment_social_buttons"
         tools:layout="@layout/fragment_social_buttons" />
+    <fragment
+        android:id="@+id/miRecetaViewFragment"
+        android:name="com.example.allreceips20.MiRecetaViewFragment"
+        android:label="fragment_mi_receta_view"
+        tools:layout="@layout/fragment_mi_receta_view" >
+        <action
+            android:id="@+id/action_miRecetaViewFragment_to_deleteConfFragment"
+            app:destination="@id/deleteConfFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/deleteConfFragment"
+        android:name="com.example.allreceips20.DeleteConfFragment"
+        android:label="fragment_delete_conf"
+        tools:layout="@layout/fragment_delete_conf" />
 
 
 </navigation>

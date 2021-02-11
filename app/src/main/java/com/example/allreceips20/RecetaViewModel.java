@@ -16,6 +16,7 @@ import java.util.List;
 public class RecetaViewModel  extends AndroidViewModel {
 
     public MutableLiveData<Uri> imagenSeleccionada = new MutableLiveData<>();
+    public boolean confirmadaEliminacion;
     MutableLiveData<Receta> recetaSeleccionado = new MutableLiveData<>();
 
     RecetaRepositorio recetaRepositorio;
@@ -37,6 +38,14 @@ public class RecetaViewModel  extends AndroidViewModel {
     public void insertarReceta(String titulo, String descripcion, String portada) {
         recetaRepositorio.insertarReceta(titulo, descripcion, portada);
     }
+
+    public void eliminarReceta(Receta receta){
+        recetaRepositorio.eliminarReceta(receta);
+    }
+
+
+
+
 
     public void establecerImagenSeleccionada(Uri uri){
         imagenSeleccionada.setValue(uri);

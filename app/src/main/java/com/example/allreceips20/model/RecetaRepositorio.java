@@ -29,4 +29,11 @@ public class RecetaRepositorio {
             recetaDao.insertarReceta(new Receta(titulo, descripcion, portada));
         });
     }
+
+    public void eliminarReceta(Receta receta) {
+        executor.execute(() -> {
+            recetaDao.eliminarReceta(receta);
+        });
+    }
+
 }

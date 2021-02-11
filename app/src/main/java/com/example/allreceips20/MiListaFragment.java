@@ -68,7 +68,7 @@ public class MiListaFragment extends Fragment {
             // CUANDO DAS CLICL EN LA RECETA
             holder.itemView.setOnClickListener(v -> {
                 recetaViewModel.seleccionar(receta);
-                navController.navigate(R.id.action_miListaFragment_to_recetaViewFragment);
+                navController.navigate(R.id.action_miListaFragment_to_miRecetaViewFragment);
             });
 
         }

@@ -7,10 +7,12 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Database;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.Update;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import java.util.List;
@@ -84,11 +86,21 @@ public abstract class BaseDeDatos extends RoomDatabase {
         @Insert
         void insertarReceta(Receta receta);
 
+        @Update
+        void editar(Receta receta);
+
         @Query("SELECT * FROM Receta WHERE lista = 0")
         LiveData<List<Receta>> obtenerRecetas();
 
         @Query("SELECT * FROM Receta WHERE lista = 1")
         LiveData<List<Receta>> obtenerRecetasIniciales();
+
+
+        @Delete
+        void eliminarReceta(Receta receta);
+
+        @Query("SELECT * FROM Receta")
+        LiveData<List<Receta>> obtenerTodasRecetas();
 
     }
 }
