@@ -38,7 +38,6 @@ public class DeleteConfFragment extends DialogFragment {
             recetaViewModel.confirmadaEliminacion = true;
 
 
-
         });
 
         binding.denegareliminacion.setOnClickListener(v -> {

@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -44,6 +45,22 @@ public class MiListaFragment extends Fragment {
         recetaViewModel.obtenerReceta().observe(getViewLifecycleOwner(),  receta ->{
             recetaAdapter.setRecetaList(receta);
         });
+
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(
+                ItemTouchHelper.UP | ItemTouchHelper.DOWN,
+                ItemTouchHelper.RIGHT  | ItemTouchHelper.LEFT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return true;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                int posicion = viewHolder.getAdapterPosition();
+                Receta receta = recetaAdapter.obtenerElemento(posicion);
+                recetaViewModel.eliminarReceta(receta);
+            }
+        }).attachToRecyclerView(binding.listaReceta);
     }
 
     class RecetaAdapter extends RecyclerView.Adapter<RecetaViewHolder>{
@@ -81,6 +98,10 @@ public class MiListaFragment extends Fragment {
         void setRecetaList(List<Receta> recetaList){
             this.recetaList = recetaList;
             notifyDataSetChanged();
+        }
+
+        public Receta obtenerElemento(int posicion){
+            return recetaList.get(posicion);
         }
     }
 
