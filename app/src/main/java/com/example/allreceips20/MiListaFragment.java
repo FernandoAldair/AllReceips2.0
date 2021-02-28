@@ -78,7 +78,6 @@ public class MiListaFragment extends Fragment {
         public void onBindViewHolder(@NonNull RecetaViewHolder holder, int position) {
             Receta receta = recetaList.get(position);
             holder.binding.titulo.setText(receta.titulo);
-//            holder.binding.descripcion.setText(receta.descripcion);
 
             Glide.with(holder.itemView).load(receta.portada).into(holder.binding.portada);
 

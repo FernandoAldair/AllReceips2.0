@@ -16,7 +16,7 @@ import java.util.List;
 public class RecetaViewModel  extends AndroidViewModel {
 
     public MutableLiveData<Uri> imagenSeleccionada = new MutableLiveData<>();
-    public boolean confirmadaEliminacion;
+
     MutableLiveData<Receta> recetaSeleccionado = new MutableLiveData<>();
 
     RecetaRepositorio recetaRepositorio;
@@ -43,14 +43,9 @@ public class RecetaViewModel  extends AndroidViewModel {
         recetaRepositorio.eliminarReceta(receta);
     }
 
-
-
-
-
     public void establecerImagenSeleccionada(Uri uri){
         imagenSeleccionada.setValue(uri);
     }
-
 
     void seleccionar(Receta receta){
         recetaSeleccionado.setValue(receta);

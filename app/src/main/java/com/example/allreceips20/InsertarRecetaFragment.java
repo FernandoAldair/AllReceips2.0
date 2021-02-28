@@ -74,7 +74,6 @@ public class InsertarRecetaFragment extends Fragment {
             }
         });
 
-        //Set tag add callback before set tag list
         binding.editTagView.setTagAddCallBack(new EditTag.TagAddCallback() {
             @Override
             public boolean onTagAdd(String tagValue) {

@@ -38,14 +38,6 @@ public class MiRecetaViewFragment extends Fragment {
             binding.descripcion.setText(receta.descripcion);
             binding.portada.setImageURI(Uri.parse(receta.portada));
 
-            binding.buttonDelete.setOnClickListener(v -> {
-                navController.navigate(R.id.action_miRecetaViewFragment_to_deleteConfFragment);
-
-                if (recetaViewModel.confirmadaEliminacion == true){
-                    recetaViewModel.eliminarReceta(receta);
-                }
-
-            });
 
         });
     }

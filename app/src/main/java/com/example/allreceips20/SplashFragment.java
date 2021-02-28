@@ -31,16 +31,13 @@ public class SplashFragment extends Fragment {
 
         navController = Navigation.findNavController(view);
 
-        // esta variable deberia estar en un ViewModel
         MutableLiveData<Boolean> finishedLoading = new MutableLiveData<>();
-
 
         finishedLoading.observe(getViewLifecycleOwner(), aBoolean -> navController.navigate(R.id.action_splashFragment_to_loginFragment));
 
-        // esto deberia estar en el Model y llamarlo a traves del ViewModel
         executor.execute(() -> {
             try {
-                // simular la carga de recursos
+                // simula la carga de recursos
                 Thread.sleep(2000);
                 finishedLoading.postValue(true);
             } catch (InterruptedException e) {

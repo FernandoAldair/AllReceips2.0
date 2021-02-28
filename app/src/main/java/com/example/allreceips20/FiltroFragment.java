@@ -55,9 +55,6 @@ public class FiltroFragment extends DialogFragment {
 
         binding.editTagView.addTag("Receta");
 
-
-//        binding.editTagView.removeTag("test3");
-
     }
 
 }

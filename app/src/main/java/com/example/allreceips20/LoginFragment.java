@@ -42,16 +42,6 @@ public class LoginFragment extends Fragment {
             }
         });
 
-////        BOTON INICIAR SESION
-//        binding.buttonIniciar.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String username = binding.Email.getText().toString();
-//                String password = binding.Password.getText().toString();
-//
-//                autenticacionViewModel.iniciarSesion(username, password);
-//            }
-//        });
 
 //        BOTON INVITADO
         binding.buttonInvitado.setOnClickListener(new View.OnClickListener() {

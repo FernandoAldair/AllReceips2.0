@@ -37,20 +37,6 @@
                     android:backgroundTint="@color/white"
                     android:layout_marginBottom="20dp"/>
 
-                <ImageButton
-                    android:id="@+id/button_delete"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginEnd="32dp"
-                    android:src="@drawable/ic_delete"
-                    android:background="@color/white"
-                    android:paddingEnd="16dp"
-                    android:paddingStart="16dp"
-                    android:paddingTop="3dp"
-                    android:paddingBottom="3dp"/>
-
             </LinearLayout>
 
             <LinearLayout
